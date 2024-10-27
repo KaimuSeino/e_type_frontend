@@ -6,10 +6,10 @@ const GrammarLessonIdPage = ({
     params: { grammarLessonId: number}
 }) => {
     return (
-        <div className="relative flex flex-col items-center gap-y-48">
+        <div className="relative flex flex-col items-center gap-y-20">
             <GrammarStudy
-                title="品詞の基礎を学ぼう"
-                description="基本４品詞（名詞・動詞・形容詞・副詞）"
+                title="動詞の基礎を学ぼう"
+                description="be動詞と一般動詞の区別"
                 lessonId={params.grammarLessonId}
             />
         </div>
