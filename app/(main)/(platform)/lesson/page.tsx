@@ -36,7 +36,7 @@ const LessonPage = async () => {
                 <div className="p-8 flex gap-10">
                     <GrammarLessonCard
                         icon={PencilLine}
-                        label={"品詞の基礎を学ぼう"}
+                        label={"動詞の基礎を学ぼう"}
                         grammarLessonId={12}
                     />
                 </div>
