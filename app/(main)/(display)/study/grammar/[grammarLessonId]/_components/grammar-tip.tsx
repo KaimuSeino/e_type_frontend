@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -7,26 +9,44 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger
+    DialogTrigger,
 } from "@/components/ui/dialog"
+import { useRef } from "react"
 
 interface GrammarTipProps {
     tipTitle:       string
     tipDescription: string
+    open: boolean
+    onOpenChange: (open: boolean) => void
 }
 
 const GrammarTip = ({
     tipTitle,
     tipDescription,
+    open,
+    onOpenChange,
 }: GrammarTipProps) => {
+    const triggerRef = useRef<HTMLButtonElement>(null)
+
+    // const handleOpenChange = (isOpen: boolean) => {
+    //     onOpenChange(isOpen)
+    //     if (!isOpen && triggerRef.current) {
+    //         triggerRef.current.blur()
+    //     }
+    // }
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogTrigger className="focus-visible:outline-none">
-                <Button className="block text-slate-500 p-0" variant="link">
+                <Button
+                    className="block text-slate-500 p-0"
+                    variant="link"
+                >
                     ヒントを表示
                 </Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent onCloseAutoFocus={(event) => {
+                event.preventDefault()
+            }}>
                 <DialogHeader className="m-4">
                     <DialogTitle className="text-center">{tipTitle}</DialogTitle>
                 </DialogHeader>
