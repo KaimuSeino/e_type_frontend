@@ -4,8 +4,6 @@ export type UserWordProgress = {
     word_id: number
     word: Word
     total_typings: number
-    typing_speed: number
-    proficiency: number
     created_at: Date
     updated_at: Date
 }
