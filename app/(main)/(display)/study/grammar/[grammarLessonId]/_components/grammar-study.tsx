@@ -8,13 +8,13 @@ import GrammarPlay from "./grammar-play"
 interface GrammarStudyProps {
     title: string
     description: string
-    lessonId: number
+    questions: GrammarQuestion[]
 }
 
 const GrammarStudy = ({
     title,
     description,
-    lessonId
+    questions
 }: GrammarStudyProps) => {
     const [isActive, setIsActive] = useState(0)
 
